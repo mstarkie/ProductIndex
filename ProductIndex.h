@@ -50,6 +50,11 @@ public:
     
     // Get the number of records in the index
     size_t getRecordCount() const { return recordCount_; }
+
+    // Avoid vector reallocations if you can;
+    void reserve(size_t estimatedCount) {
+        buffer_.reserve(estimatedCount);
+    }
     
 private:
     // For building

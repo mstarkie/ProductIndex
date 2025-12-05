@@ -63,7 +63,8 @@ bool ProductIndex::buildIndex(const std::string& indexFilePath) {
     buffer_.clear();
     buffer_.shrink_to_fit();
     
-    return true;
+    // Open for reading
+    return openIndex(indexFilePath);
 }
 
 bool ProductIndex::openIndex(const std::string& indexFilePath) {
